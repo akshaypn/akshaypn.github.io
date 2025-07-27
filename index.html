@@ -175,6 +175,12 @@
             font-weight: 600;
         }
 
+        .availability {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
         .cta-buttons {
             display: flex;
             gap: 1rem;
@@ -232,6 +238,108 @@
             background: #f0f4f9;
         }
 
+        /* Metrics Section */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .metric-icon {
+            margin-bottom: 1rem;
+        }
+
+        .metric-icon i {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Research Section */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .research-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .research-icon {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .research-icon i {
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        .research-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .research-card p {
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .research-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
         /* About Section */
         .about-grid {
             display: grid;
@@ -264,6 +372,32 @@
             margin-bottom: 1rem;
             font-size: 1.1rem;
             color: var(--text);
+        }
+
+        .domain-expertise {
+            margin-top: 2rem;
+        }
+
+        .domain-expertise h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .domain-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .domain-tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
         }
 
         /* Skills Section */
@@ -453,12 +587,31 @@
         }
 
         /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-info p {
+            color: var(--text);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 600px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .contact-item {
@@ -489,6 +642,49 @@
 
         .contact-item a:hover {
             color: var(--accent);
+        }
+
+        .contact-cta {
+            text-align: center;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
         /* Education Section */
@@ -630,6 +826,19 @@
                 grid-template-columns: 1fr;
             }
 
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -734,6 +943,56 @@
         body.dark .about-text p {
             color: #cbd5e0;
         }
+
+        body.dark .metric-card,
+        body.dark .research-card,
+        body.dark .contact-form {
+            background: #2d3748;
+            color: #e8eaed;
+            border: 1px solid #4a5568;
+        }
+
+        body.dark .metric-number {
+            color: #68d391;
+        }
+
+        body.dark .metric-label,
+        body.dark .research-card h3,
+        body.dark .contact-form h3,
+        body.dark .contact-info h3 {
+            color: #63b3ed;
+        }
+
+        body.dark .metric-description,
+        body.dark .research-card p {
+            color: #cbd5e0;
+        }
+
+        body.dark .domain-tag {
+            background: #4a5568;
+            color: #63b3ed;
+            border-color: #2d3748;
+        }
+
+        body.dark .contact-info p {
+            color: #cbd5e0;
+        }
+
+        body.dark .form-group input,
+        body.dark .form-group textarea {
+            background: #4a5568;
+            color: #e8eaed;
+            border-color: #2d3748;
+        }
+
+        body.dark .form-group input:focus,
+        body.dark .form-group textarea:focus {
+            border-color: #68d391;
+        }
+
+        body.dark .availability {
+            color: #68d391;
+        }
     </style>
 </head>
 
@@ -746,6 +1005,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#research">Research</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -766,19 +1026,62 @@
                     <span class="highlight">Edge AI solutions</span>, and 
                     <span class="highlight">Production ML systems</span> that actually work!
                 </p>
+                <p class="availability">
+                    <span class="highlight">🟢 Available for high-ticket consulting engagements and end-to-end LLM solutions</span>
+                </p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">
                         <i class="fas fa-code"></i>
                         View Projects
                     </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <i class="fas fa-envelope"></i>
-                        Get In Touch
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-handshake"></i>
+                        Hire Me
                     </a>
                     <a href="assets/akshay-nambiar-resume.pdf" class="btn btn-outline" target="_blank">
                         <i class="fas fa-download"></i>
                         Download Resume
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Metrics Section -->
+    <section id="metrics" class="alt-bg">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="metric-number">80-100</div>
+                    <div class="metric-label">H100 GPUs</div>
+                    <div class="metric-description">Distributed training clusters</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="metric-number">2T</div>
+                    <div class="metric-label">Tokens Trained</div>
+                    <div class="metric-description">LLM pre-training scale</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="metric-number">Edge</div>
+                    <div class="metric-label">Whisper Deployment</div>
+                    <div class="metric-description">Mobile GPU optimization</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <div class="metric-number">SOTA</div>
+                    <div class="metric-label">Synthetic Data</div>
+                    <div class="metric-description">LM-Harness beating datasets</div>
                 </div>
             </div>
         </div>
@@ -794,18 +1097,29 @@
                     <h3>🚀 AI/ML Engineer with a Passion for Innovation</h3>
                     <p>
                         Hey there! I'm an AI/ML Engineer who's been in the trenches for 4+ years, specializing in Large Language Model pre-training, 
-                        fine-tuning, and deployment. Currently at Tether Operations Limited, I'm the guy leading distributed training 
-                        on 80-100 H100 GPUs and building custom LLMs from the ground up! 💪
+                        fine-tuning, and deployment. Currently managing distributed training clusters at Tether Operations Limited 
+                        on 80-100 H100 GPUs and developing synthetic datasets that beat SOTA LLMs on LM-Harness! 💪
                     </p>
                     <p>
-                        My expertise covers the entire AI/ML pipeline - from data prep to model training to production deployment. 
-                        I've delivered AI solutions that boosted claim closure rates by 500% and process 1M+ documents daily. 
+                        My expertise spans the entire AI/ML pipeline - from edge device optimization to large-scale model training to production deployment. 
+                        I've engineered Whisper models for mobile GPUs, built end-to-end LLM solutions, and developed cutting-edge synthetic data generation. 
                         When I say "production-ready," I mean it! 🎯
                     </p>
                     <p>
-                        IIT Gandhinagar grad who's worked across EdTech, InsurTech, and fintech - always using cutting-edge tech 
-                        to solve real-world problems. Let's build something amazing together! 🚀
+                        IIT Gandhinagar grad specializing in <strong>GENAI</strong>, <strong>edge computing</strong>, and <strong>LLM research</strong> - always pushing the boundaries 
+                        of what's possible with AI. This diverse experience makes me adaptable to any domain! 🚀
                     </p>
+                    <div class="domain-expertise">
+                        <h4>Domain Expertise:</h4>
+                        <div class="domain-tags">
+                            <span class="domain-tag">🧠 GENAI</span>
+                            <span class="domain-tag">📱 Edge Computing</span>
+                            <span class="domain-tag">🎙️ Audio Processing</span>
+                            <span class="domain-tag">📊 LLM Research</span>
+                            <span class="domain-tag">🏥 Health-Tech</span>
+                            <span class="domain-tag">💰 FinTech</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -861,10 +1175,10 @@
                         <div class="timeline-title">AI Engineer (LLM)</div>
                         <div class="timeline-company">Tether Operations Limited</div>
                         <div class="timeline-description">
-                            • Leading QVAC 1B and 3B model pre-training from scratch on 80-100 H100 GPUs<br>
-                            • Managing distributed training across 10 nodes using DeepSpeed and Slurm<br>
-                            • Pre-trained models on 2 trillion tokens with 100% uptime monitoring<br>
-                            • Developing AI assistants with multiple persona adapters for mobile applications
+                            • Managing distributed training clusters for QVAC 1B and 3B model pre-training on 80-100 H100 GPUs<br>
+                            • Coordinating training across 10 nodes using DeepSpeed and Slurm with 100% uptime monitoring<br>
+                            • Developing synthetic datasets that beat SOTA LLMs on LM-Harness benchmarks<br>
+                            • Building AI assistants with multiple persona adapters for mobile applications
                         </div>
                     </div>
                 </div>
@@ -876,7 +1190,8 @@
                         <div class="timeline-description">
                             • Engineered Whisper Small model for mobile GPU deployment using MLC and TVM<br>
                             • Implemented distributed training on dual servers with DeepSpeed<br>
-                            • Developed AI interview grading system using Whisper and GPT-4 API
+                            • Developed AI interview grading system using Whisper and GPT-4 API<br>
+                            • Specialized in edge device optimization and real-time inference
                         </div>
                     </div>
                 </div>
@@ -887,9 +1202,9 @@
                         <div class="timeline-company">Gigaforce Inc.</div>
                         <div class="timeline-description">
                             • Developed SubroGPT using Falcon 40B with PEFT and LoRA fine-tuning<br>
-                            • Built QA Retrieval Agent increasing claim closure rate by 500%<br>
-                            • Created production-ready subrogation potential analyzer processing 1M+ documents daily<br>
-                            • Automated police report data extraction reducing processing time by 1 hour per report
+                            • Built QA Retrieval Agent with LangChain and vector databases<br>
+                            • Created production-ready document processing systems<br>
+                            • Gained experience in LLM fine-tuning and production deployment
                         </div>
                     </div>
                 </div>
@@ -909,6 +1224,51 @@
         </div>
     </section>
 
+    <!-- Research & Tools Section -->
+    <section id="research">
+        <div class="container">
+            <h2 class="section-title">Research & Specialized Tools</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>SOTA Synthetic Data Generation</h3>
+                    <p>Developing cutting-edge synthetic datasets that beat state-of-the-art LLMs on LM-Harness benchmarks. Creating high-quality training data that pushes the boundaries of model performance.</p>
+                    <div class="research-tech">
+                        <span class="tech-tag">SOTA Datasets</span>
+                        <span class="tech-tag">LM-Harness</span>
+                        <span class="tech-tag">Benchmark Beating</span>
+                    </div>
+                </div>
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>TSRT - Temporal-Sparse Recurrent Transformer</h3>
+                    <p>Novel transformer architecture for temporal data processing with sparse attention mechanisms, optimizing for both performance and computational efficiency.</p>
+                    <div class="research-tech">
+                        <span class="tech-tag">Transformer</span>
+                        <span class="tech-tag">Temporal Data</span>
+                        <span class="tech-tag">Sparse Attention</span>
+                    </div>
+                </div>
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>LLM Model Pre-training Scripts</h3>
+                    <p>Production-ready scripts and pipelines for large-scale model pre-training, including distributed training, checkpointing, and monitoring systems.</p>
+                    <div class="research-tech">
+                        <span class="tech-tag">Distributed Training</span>
+                        <span class="tech-tag">MLOps</span>
+                        <span class="tech-tag">Monitoring</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="alt-bg">
         <div class="container">
@@ -919,19 +1279,18 @@
                         <i class="fas fa-heartbeat"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">HealthUp - Personal Health Tracker</h3>
+                        <h3 class="project-title">Edge Whisper - Mobile GPU Optimization</h3>
                         <p class="project-description">
-                            🏃‍♂️ Your AI-powered health companion! Tracks everything from weight to heart rate, 
-                            serving up personalized insights and motivation through LLM-driven coaching. 
-                            Works offline like a champ! 💪
+                            🎙️ Whisper on steroids! Engineered Whisper Small for mobile GPU deployment using MLC and TVM, 
+                            enabling real-time speech-to-text on edge devices. Vulkan, CUDA, OpenCL - all optimized! ⚡
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">React 18</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">Gemini API</span>
+                            <span class="tech-tag">MLC</span>
+                            <span class="tech-tag">TVM</span>
+                            <span class="tech-tag">Vulkan</span>
+                            <span class="tech-tag">CUDA</span>
                         </div>
-                        <a href="https://github.com/akshaypn/healthup" target="_blank" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">
+                        <a href="https://github.com/akshaypn/soloscribe" target="_blank" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">
                             <i class="fab fa-github"></i> View Project
                         </a>
                     </div>
@@ -941,16 +1300,16 @@
                         <i class="fas fa-microphone"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">SoloScribe - Meeting Recorder</h3>
+                        <h3 class="project-title">QVAC LLM Pre-training</h3>
                         <p class="project-description">
-                            🎙️ Never miss a meeting detail again! Captures, transcribes, and summarizes meetings 
-                            with AI magic. Enterprise-ready with SAML auth - your meetings, your data, your control! 🔒
+                            🧠 Building LLMs from scratch! Managing distributed training clusters for QVAC 1B and 3B models 
+                            on 80-100 H100 GPUs. DeepSpeed, Slurm, and 2T tokens of training data - production scale! 🚀
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">Puppeteer</span>
-                            <span class="tech-tag">Whisper</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">DeepSpeed</span>
+                            <span class="tech-tag">Slurm</span>
+                            <span class="tech-tag">H100 GPUs</span>
                         </div>
                         <a href="https://github.com/akshaypn/soloscribe" target="_blank" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">
                             <i class="fab fa-github"></i> View Project
@@ -962,16 +1321,16 @@
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Portfolio Coach - AI Trading</h3>
+                        <h3 class="project-title">Synthetic Data Generation</h3>
                         <p class="project-description">
-                            📈 Your AI trading buddy! Analyzes portfolios in real-time, chats about market trends, 
-                            and dishes out smart buy/sell advice. RAG-powered insights that actually make sense! 🚀
+                            🧬 Creating datasets that beat SOTA! Developing synthetic training data that outperforms 
+                            state-of-the-art LLMs on LM-Harness benchmarks. Quality over quantity, benchmark over baseline! 🎯
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">React 18</span>
-                            <span class="tech-tag">Flask</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Data Generation</span>
+                            <span class="tech-tag">LM-Harness</span>
+                            <span class="tech-tag">Benchmarking</span>
+                            <span class="tech-tag">SOTA</span>
                         </div>
                         <a href="https://github.com/akshaypn/super_trader" target="_blank" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">
                             <i class="fab fa-github"></i> View Project
@@ -1090,22 +1449,55 @@
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:akshay.nambiar7@gmail.com">akshay.nambiar7@gmail.com</a>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ready to Build Something Amazing?</h3>
+                    <p>I'm available for high-ticket consulting engagements and end-to-end LLM solutions. Specializing in edge computing, synthetic data generation, and large-scale model training. Let's discuss how we can work together!</p>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:akshay.nambiar7@gmail.com">akshay.nambiar7@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/akshaynambiar7/" target="_blank">LinkedIn</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/akshaypn" target="_blank">GitHub</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919521279646">+91-9521-279-646</a>
+                        </div>
+                    </div>
+                    <div class="contact-cta">
+                        <a href="https://calendly.com/akshay-nambiar/30min" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-calendar"></i>
+                            Schedule a Call
+                        </a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/akshaynambiar7/" target="_blank">LinkedIn</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/akshaypn" target="_blank">GitHub</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+919521279646">+91-9521-279-646</a>
+                <div class="contact-form">
+                    <h3>Send me a message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -1160,7 +1552,7 @@
         }, observerOptions);
 
         // Observe all sections and cards
-        document.querySelectorAll('section, .skill-card, .project-card, .timeline-item').forEach(el => {
+        document.querySelectorAll('section, .skill-card, .project-card, .timeline-item, .metric-card, .research-card').forEach(el => {
             observer.observe(el);
         });
 
@@ -1190,6 +1582,33 @@
                 icon.classList.add('fa-moon');
             }
         });
+
+        // Contact form handling
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const subject = formData.get('subject');
+                const message = formData.get('message');
+                
+                // Create mailto link
+                const mailtoLink = `mailto:akshay.nambiar7@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+                
+                // Open email client
+                window.open(mailtoLink);
+                
+                // Reset form
+                this.reset();
+                
+                // Show success message
+                alert('Thank you for your message! Your email client should open with the pre-filled message.');
+            });
+        }
     </script>
 </body>
 </html>
