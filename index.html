@@ -243,9 +243,11 @@
         .profile-pic {
             width: 100%;
             max-width: 300px;
-            border-radius: 16px;
+            border-radius: 50%;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
+            object-fit: cover;
+            aspect-ratio: 1;
         }
 
         .profile-pic:hover {
@@ -652,17 +654,17 @@
 
         /* Dark mode */
         body.dark {
-            background: var(--dark);
-            color: #d4dce5;
+            background: #0a0e14;
+            color: #e8eaed;
         }
         
         body.dark nav {
-            background: rgba(18, 26, 35, 0.95);
-            border-color: #243447;
+            background: rgba(10, 14, 20, 0.95);
+            border-color: #2d3748;
         }
         
         body.dark .alt-bg {
-            background: #16202a;
+            background: #1a202c;
         }
         
         body.dark .skill-card,
@@ -671,24 +673,66 @@
         body.dark .education-card,
         body.dark .achievements-card,
         body.dark .contact-item {
-            background: #1e2a36;
-            color: #d4dce5;
+            background: #2d3748;
+            color: #e8eaed;
+            border: 1px solid #4a5568;
+        }
+        
+        body.dark .skill-card h3,
+        body.dark .project-card h3,
+        body.dark .timeline-title,
+        body.dark .education-card h3,
+        body.dark .achievements-card h3 {
+            color: #63b3ed;
+        }
+        
+        body.dark .skill-card p,
+        body.dark .project-card p,
+        body.dark .timeline-description,
+        body.dark .education-card p,
+        body.dark .achievements-card li {
+            color: #cbd5e0;
+        }
+        
+        body.dark .timeline-date,
+        body.dark .timeline-company,
+        body.dark .institution,
+        body.dark .duration {
+            color: #68d391;
+        }
+        
+        body.dark .tech-tag {
+            background: #4a5568;
+            color: #63b3ed;
         }
         
         body.dark .project-card .button {
             background: var(--accent);
+            color: white;
         }
         
         body.dark footer {
-            background: #16202a;
+            background: #1a202c;
         }
         
         body.dark .dark-mode-btn {
-            color: #d4dce5;
+            color: #e8eaed;
         }
         
         body.dark .dark-mode-btn:hover {
-            background: #243447;
+            background: #4a5568;
+        }
+        
+        body.dark .section-title {
+            color: #63b3ed;
+        }
+        
+        body.dark .about-text h3 {
+            color: #63b3ed;
+        }
+        
+        body.dark .about-text p {
+            color: #cbd5e0;
         }
     </style>
 </head>
@@ -718,9 +762,9 @@
             <div class="hero-content">
                 <h1>AI/ML Engineer & LLM Specialist</h1>
                 <p class="subtitle">
-                    4+ years of experience in <span class="highlight">Large Language Model pre-training</span>, 
-                    <span class="highlight">Edge Device AI/ML computing</span>, and 
-                    <span class="highlight">AI-driven solutions</span>
+                    🚀 Building the future with AI! 4+ years crafting <span class="highlight">Large Language Models</span>, 
+                    <span class="highlight">Edge AI solutions</span>, and 
+                    <span class="highlight">Production ML systems</span> that actually work!
                 </p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">
@@ -745,22 +789,22 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
-                <img src="images/akshay_nambiar.jpg" alt="Akshay P Nambiar" class="profile-pic">
+                <img src="images/github_profile.jpg" alt="Akshay P Nambiar" class="profile-pic">
                 <div class="about-text">
-                    <h3>AI/ML Engineer with a Passion for Innovation</h3>
+                    <h3>🚀 AI/ML Engineer with a Passion for Innovation</h3>
                     <p>
-                        I'm an AI/ML Engineer with over 4 years of experience specializing in Large Language Model pre-training, 
-                        fine-tuning, and deployment. Currently working at Tether Operations Limited, I lead distributed training 
-                        on 80-100 H100 GPUs and develop custom LLMs from scratch.
+                        Hey there! I'm an AI/ML Engineer who's been in the trenches for 4+ years, specializing in Large Language Model pre-training, 
+                        fine-tuning, and deployment. Currently at Tether Operations Limited, I'm the guy leading distributed training 
+                        on 80-100 H100 GPUs and building custom LLMs from the ground up! 💪
                     </p>
                     <p>
-                        My expertise spans the entire AI/ML pipeline - from data preparation and model training to deployment 
-                        and production optimization. I've successfully delivered AI solutions that have increased claim closure 
-                        rates by 500% and processed 1M+ documents daily.
+                        My expertise covers the entire AI/ML pipeline - from data prep to model training to production deployment. 
+                        I've delivered AI solutions that boosted claim closure rates by 500% and process 1M+ documents daily. 
+                        When I say "production-ready," I mean it! 🎯
                     </p>
                     <p>
-                        I hold a B.Tech from IIT Gandhinagar and have worked across EdTech, InsurTech, and fintech domains, 
-                        always leveraging cutting-edge technology to solve real-world problems.
+                        IIT Gandhinagar grad who's worked across EdTech, InsurTech, and fintech - always using cutting-edge tech 
+                        to solve real-world problems. Let's build something amazing together! 🚀
                     </p>
                 </div>
             </div>
@@ -877,8 +921,9 @@
                     <div class="project-content">
                         <h3 class="project-title">HealthUp - Personal Health Tracker</h3>
                         <p class="project-description">
-                            A comprehensive PWA that logs weight, meals, and heart-rate traces with AI-powered insights, 
-                            daily/weekly/monthly charts, and LLM-driven coaching. Built with modern full-stack architecture.
+                            🏃‍♂️ Your AI-powered health companion! Tracks everything from weight to heart rate, 
+                            serving up personalized insights and motivation through LLM-driven coaching. 
+                            Works offline like a champ! 💪
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">React 18</span>
@@ -898,8 +943,8 @@
                     <div class="project-content">
                         <h3 class="project-title">SoloScribe - Meeting Recorder</h3>
                         <p class="project-description">
-                            On-premise Docker-packaged appliance that captures meeting audio/video, transcribes with Whisper, 
-                            and summarizes with LLM + RAG. Includes enterprise SAML/SCIM authentication.
+                            🎙️ Never miss a meeting detail again! Captures, transcribes, and summarizes meetings 
+                            with AI magic. Enterprise-ready with SAML auth - your meetings, your data, your control! 🔒
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Puppeteer</span>
@@ -919,8 +964,8 @@
                     <div class="project-content">
                         <h3 class="project-title">Portfolio Coach - AI Trading</h3>
                         <p class="project-description">
-                            Intelligent portfolio management system with AI-powered analysis, real-time insights, 
-                            and buy/sell recommendations. Features RAG-based chat interface and Upstox integration.
+                            📈 Your AI trading buddy! Analyzes portfolios in real-time, chats about market trends, 
+                            and dishes out smart buy/sell advice. RAG-powered insights that actually make sense! 🚀
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">React 18</span>
@@ -940,8 +985,8 @@
                     <div class="project-content">
                         <h3 class="project-title">RailScanner</h3>
                         <p class="project-description">
-                            Express.js application that looks up train information from Indian Railways API on RapidAPI. 
-                            Features train search by number and live status tracking with minimal HTML/JS frontend.
+                            🚂 Train info at your fingertips! Instantly find train details and live status 
+                            from Indian Railways. Simple, fast, and gets you where you need to go! 🎫
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Node.js</span>
@@ -961,8 +1006,8 @@
                     <div class="project-content">
                         <h3 class="project-title">Transformers QVAC</h3>
                         <p class="project-description">
-                            Custom fork of Hugging Face Transformers library with QVAC integration for state-of-the-art 
-                            machine learning in PyTorch, TensorFlow, and JAX with enhanced model capabilities.
+                            🧠 Supercharged ML library! Custom Transformers fork with QVAC integration 
+                            for next-gen AI models. PyTorch, TensorFlow, JAX - all turbocharged! ⚡
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">PyTorch</span>
@@ -982,8 +1027,8 @@
                     <div class="project-content">
                         <h3 class="project-title">Algorithmic Trading</h3>
                         <p class="project-description">
-                            Comprehensive algorithmic trading notebooks for NSE and BSE stocks using Zerodha's Kite Connect API. 
-                            Features advanced trading strategies and market analysis tools.
+                            💰 Smart trading algorithms that work while you sleep! NSE/BSE analysis with 
+                            Zerodha integration, advanced strategies, and market insights. Let AI do the heavy lifting! 📊
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
