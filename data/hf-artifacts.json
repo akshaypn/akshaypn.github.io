@@ -1,0 +1,519 @@
+{
+  "updatedAt": "2026-07-12T20:26:40.582Z",
+  "source": "https://huggingface.co/qvac",
+  "note": "Downloads are Hugging Face monthly-download snapshots, not unique users.",
+  "artifacts": [
+    {
+      "id": "medpsy-17b",
+      "repository": "qvac/MedPsy-1.7B",
+      "repositoryType": "model",
+      "category": "models",
+      "classification": "Instruction-tuned model",
+      "name": "MedPsy-1.7B",
+      "capability": "Compact medical reasoning for private edge deployment.",
+      "scale": "1.7B parameters",
+      "formats": "BF16 · Safetensors",
+      "task": "Medical QA",
+      "size": "4.07 GB BF16",
+      "description": "A Qwen3-1.7B medical model post-trained with supervised fine-tuning and reinforcement learning for text-only healthcare reasoning.",
+      "contribution": "Contributor to the research, evaluation, technical report, and public release.",
+      "results": [
+        "62.62 closed-ended medical benchmark average",
+        "70.33 HealthBench · 54.33 HealthBench Hard"
+      ],
+      "links": [
+        {
+          "label": "Model card",
+          "url": "https://huggingface.co/qvac/MedPsy-1.7B"
+        },
+        {
+          "label": "Technical report",
+          "url": "https://huggingface.co/blog/qvac/medpsy"
+        },
+        {
+          "label": "GGUF variants",
+          "url": "https://huggingface.co/qvac/MedPsy-1.7B-GGUF"
+        }
+      ],
+      "stats": {
+        "downloads": 748,
+        "likes": 8,
+        "lastModified": "2026-05-07T11:32:46.000Z",
+        "license": "apache-2.0",
+        "pipelineTask": "text-generation",
+        "languages": [
+          "en"
+        ],
+        "repositoryBytes": 4074938294
+      }
+    },
+    {
+      "id": "medpsy-17b-gguf",
+      "repository": "qvac/MedPsy-1.7B-GGUF",
+      "repositoryType": "model",
+      "category": "models",
+      "classification": "Quantized deployment model",
+      "name": "MedPsy-1.7B GGUF",
+      "capability": "Phone-ready medical inference through llama.cpp and QVAC SDK.",
+      "scale": "1.7B parameters",
+      "formats": "GGUF · BF16 to 3-bit",
+      "task": "On-device medical QA",
+      "size": "1.28 GB recommended Q4_K_M",
+      "description": "Deployment-oriented MedPsy weights with seven quantization options for laptops, smartphones, and other memory-constrained devices.",
+      "contribution": "Contributor to the research, evaluation, quantization analysis, and release.",
+      "results": [
+        "Q4_K_M retains 62.16 closed-ended average at 69% smaller than BF16",
+        "Q8_0 matches the BF16 benchmark average at 2.16 GB"
+      ],
+      "links": [
+        {
+          "label": "Model card",
+          "url": "https://huggingface.co/qvac/MedPsy-1.7B-GGUF"
+        },
+        {
+          "label": "Technical report",
+          "url": "https://huggingface.co/blog/qvac/medpsy"
+        },
+        {
+          "label": "Runtime",
+          "url": "https://docs.qvac.tether.io/"
+        }
+      ],
+      "stats": {
+        "downloads": 1232,
+        "likes": 3,
+        "lastModified": "2026-05-07T11:50:32.000Z",
+        "license": "apache-2.0",
+        "pipelineTask": "text-generation",
+        "languages": [
+          "en"
+        ],
+        "repositoryBytes": 13311536128
+      }
+    },
+    {
+      "id": "medpsy-4b",
+      "repository": "qvac/MedPsy-4B",
+      "repositoryType": "model",
+      "category": "models",
+      "classification": "Instruction-tuned model",
+      "name": "MedPsy-4B",
+      "capability": "Higher-capacity medical reasoning at edge scale.",
+      "scale": "4B parameters",
+      "formats": "BF16 · Safetensors",
+      "task": "Medical QA",
+      "size": "8.83 GB BF16",
+      "description": "A Qwen3-4B medical model with multi-stage post-training for clinical knowledge, expert reasoning, and realistic health scenarios.",
+      "contribution": "Contributor to the research, evaluation, technical report, and public release.",
+      "results": [
+        "70.54 closed-ended medical benchmark average",
+        "74.00 HealthBench · 58.00 HealthBench Hard"
+      ],
+      "links": [
+        {
+          "label": "Model card",
+          "url": "https://huggingface.co/qvac/MedPsy-4B"
+        },
+        {
+          "label": "Technical report",
+          "url": "https://huggingface.co/blog/qvac/medpsy"
+        },
+        {
+          "label": "GGUF variants",
+          "url": "https://huggingface.co/qvac/MedPsy-4B-GGUF"
+        }
+      ],
+      "stats": {
+        "downloads": 472,
+        "likes": 8,
+        "lastModified": "2026-05-07T11:51:51.000Z",
+        "license": "apache-2.0",
+        "pipelineTask": "text-generation",
+        "languages": [
+          "en"
+        ],
+        "repositoryBytes": 8834317174
+      }
+    },
+    {
+      "id": "medpsy-4b-gguf",
+      "repository": "qvac/MedPsy-4B-GGUF",
+      "repositoryType": "model",
+      "category": "models",
+      "classification": "Quantized deployment model",
+      "name": "MedPsy-4B GGUF",
+      "capability": "Quantized medical reasoning for laptops and high-end mobile devices.",
+      "scale": "4B parameters",
+      "formats": "GGUF · BF16 to 3-bit",
+      "task": "On-device medical QA",
+      "size": "2.72 GB recommended Q4_K_M",
+      "description": "Deployment weights spanning near-lossless Q8 through compact IQ3 formats, with measured benchmark retention for each option.",
+      "contribution": "Contributor to the research, evaluation, quantization analysis, and release.",
+      "results": [
+        "Q4_K_M retains 69.92 closed-ended average at 69% smaller than BF16",
+        "IQ3_M reaches 2.13 GB with a 2.07% relative average-score reduction"
+      ],
+      "links": [
+        {
+          "label": "Model card",
+          "url": "https://huggingface.co/qvac/MedPsy-4B-GGUF"
+        },
+        {
+          "label": "Technical report",
+          "url": "https://huggingface.co/blog/qvac/medpsy"
+        },
+        {
+          "label": "Runtime",
+          "url": "https://docs.qvac.tether.io/"
+        }
+      ],
+      "stats": {
+        "downloads": 844,
+        "likes": 6,
+        "lastModified": "2026-05-07T11:51:29.000Z",
+        "license": "apache-2.0",
+        "pipelineTask": "text-generation",
+        "languages": [
+          "en"
+        ],
+        "repositoryBytes": 28440717568
+      }
+    },
+    {
+      "id": "genesis-i-model",
+      "repository": "qvac/genesis-i-model",
+      "repositoryType": "model",
+      "category": "models",
+      "classification": "Base pretrained checkpoint",
+      "name": "Genesis I Pretrained Model",
+      "capability": "A research checkpoint trained from scratch on Genesis I.",
+      "scale": "1.7B parameters",
+      "formats": "BF16 · Safetensors",
+      "task": "Educational pretraining",
+      "size": "Full checkpoint",
+      "description": "A Qwen3-family base model trained on approximately 40B tokens to evaluate the educational synthetic-data programme.",
+      "contribution": "Distributed training infrastructure, pretraining ablations, evaluation, and release analysis within the wider team effort.",
+      "results": [
+        "Trained from scratch on the Genesis I corpus",
+        "Released as a research checkpoint, not an instruction-tuned flagship model"
+      ],
+      "links": [
+        {
+          "label": "Model card",
+          "url": "https://huggingface.co/qvac/genesis-i-model"
+        },
+        {
+          "label": "Technical report",
+          "url": "https://huggingface.co/blog/qvac/genesis-i"
+        }
+      ],
+      "stats": {
+        "downloads": 21,
+        "likes": 10,
+        "lastModified": "2025-11-18T15:03:44.000Z",
+        "license": "apache-2.0",
+        "pipelineTask": "text-generation",
+        "languages": [
+          "en"
+        ],
+        "repositoryBytes": 3452608262
+      }
+    },
+    {
+      "id": "genesis-ii-combined",
+      "repository": "qvac/genesis-ii-model-combined",
+      "repositoryType": "model",
+      "category": "models",
+      "classification": "Research ablation checkpoint",
+      "name": "Genesis II Combined Checkpoint",
+      "capability": "A supporting checkpoint for combined-method data ablations.",
+      "scale": "Research checkpoint",
+      "formats": "Hugging Face weights",
+      "task": "Data ablation",
+      "size": "See repository files",
+      "description": "One of three public Genesis II checkpoints used to compare failure-analysis and option-level reasoning data.",
+      "contribution": "Data and evaluation pipelines, distributed training infrastructure, ablations, and release analysis.",
+      "results": [
+        "Supporting artifact for the Genesis II release",
+        "Presented as an ablation checkpoint rather than an independent model"
+      ],
+      "links": [
+        {
+          "label": "Model card",
+          "url": "https://huggingface.co/qvac/genesis-ii-model-combined"
+        },
+        {
+          "label": "Technical report",
+          "url": "https://huggingface.co/blog/qvac/genesis-ii"
+        }
+      ],
+      "stats": {
+        "downloads": 2,
+        "likes": 2,
+        "lastModified": "2025-12-16T14:49:40.000Z",
+        "license": "apache-2.0",
+        "pipelineTask": null,
+        "languages": [
+          "en"
+        ],
+        "repositoryBytes": 3452608230
+      }
+    },
+    {
+      "id": "genesis-ii-option-level",
+      "repository": "qvac/genesis-ii-model-ol-reasoning",
+      "repositoryType": "model",
+      "category": "models",
+      "classification": "Research ablation checkpoint",
+      "name": "Genesis II Option-Level Checkpoint",
+      "capability": "A checkpoint for option-level reasoning data evaluation.",
+      "scale": "Research checkpoint",
+      "formats": "Hugging Face weights",
+      "task": "Data ablation",
+      "size": "See repository files",
+      "description": "A supporting artifact isolating the option-level reasoning method introduced in Genesis II.",
+      "contribution": "Data and evaluation pipelines, distributed training infrastructure, ablations, and release analysis.",
+      "results": [
+        "Isolates option-level reasoning data in the public ablation set",
+        "Presented as a supporting research artifact"
+      ],
+      "links": [
+        {
+          "label": "Model card",
+          "url": "https://huggingface.co/qvac/genesis-ii-model-ol-reasoning"
+        },
+        {
+          "label": "Technical report",
+          "url": "https://huggingface.co/blog/qvac/genesis-ii"
+        }
+      ],
+      "stats": {
+        "downloads": 2,
+        "likes": 1,
+        "lastModified": "2025-12-16T14:49:39.000Z",
+        "license": "apache-2.0",
+        "pipelineTask": null,
+        "languages": [
+          "en"
+        ],
+        "repositoryBytes": 3452608230
+      }
+    },
+    {
+      "id": "genesis-ii-failure-analysis",
+      "repository": "qvac/genesis-ii-model-failure-analysis",
+      "repositoryType": "model",
+      "category": "models",
+      "classification": "Research ablation checkpoint",
+      "name": "Genesis II Failure-Analysis Checkpoint",
+      "capability": "A checkpoint for failure-guided educational data evaluation.",
+      "scale": "Research checkpoint",
+      "formats": "Hugging Face weights",
+      "task": "Data ablation",
+      "size": "See repository files",
+      "description": "A supporting artifact isolating educational content generated from questions a model answered incorrectly.",
+      "contribution": "Data and evaluation pipelines, distributed training infrastructure, ablations, and release analysis.",
+      "results": [
+        "Isolates failure-analysis data in the public ablation set",
+        "Presented as a supporting research artifact"
+      ],
+      "links": [
+        {
+          "label": "Model card",
+          "url": "https://huggingface.co/qvac/genesis-ii-model-failure-analysis"
+        },
+        {
+          "label": "Technical report",
+          "url": "https://huggingface.co/blog/qvac/genesis-ii"
+        }
+      ],
+      "stats": {
+        "downloads": 3,
+        "likes": 1,
+        "lastModified": "2025-12-16T14:49:38.000Z",
+        "license": "apache-2.0",
+        "pipelineTask": null,
+        "languages": [
+          "en"
+        ],
+        "repositoryBytes": 3452608230
+      }
+    },
+    {
+      "id": "genesis-i-dataset",
+      "repository": "qvac/GenesisI",
+      "repositoryType": "dataset",
+      "category": "datasets",
+      "classification": "Synthetic pretraining dataset",
+      "name": "QVAC Genesis I",
+      "capability": "Failure-guided educational data for pretraining and reasoning research.",
+      "scale": "31.9M rows · 40.9B tokens",
+      "formats": "Parquet · text",
+      "task": "Language-model pretraining",
+      "size": "Approximately 500 GB",
+      "description": "Synthetic educational content across nine domain configurations, generated from model failures and expressed in four pedagogical styles.",
+      "contribution": "DevOps and MLOps for data generation and training, distributed infrastructure, pretraining ablations, and release analysis.",
+      "results": [
+        "Nine educational domain configurations",
+        "English · CC BY-NC 4.0"
+      ],
+      "links": [
+        {
+          "label": "Dataset card",
+          "url": "https://huggingface.co/datasets/qvac/GenesisI"
+        },
+        {
+          "label": "Technical report",
+          "url": "https://huggingface.co/blog/qvac/genesis-i"
+        },
+        {
+          "label": "Ablation model",
+          "url": "https://huggingface.co/qvac/genesis-i-model"
+        }
+      ],
+      "stats": {
+        "downloads": 349,
+        "likes": 10,
+        "lastModified": "2025-12-11T14:09:11.000Z",
+        "license": "cc-by-nc-4.0",
+        "pipelineTask": null,
+        "languages": [
+          "en"
+        ],
+        "repositoryBytes": 513609462443
+      }
+    },
+    {
+      "id": "genesis-ii-dataset",
+      "repository": "qvac/GenesisII",
+      "repositoryType": "dataset",
+      "category": "datasets",
+      "classification": "Synthetic pretraining dataset",
+      "name": "QVAC Genesis II",
+      "capability": "Failure analysis and option-level reasoning across an expanded curriculum.",
+      "scale": "86.3M samples · 107.5B tokens",
+      "formats": "Parquet · text",
+      "task": "Language-model pretraining",
+      "size": "See repository files",
+      "description": "An expansion adding ten domains and option-level reasoning; together Genesis I and II comprise 148.37B tokens across 19 domains.",
+      "contribution": "Data and evaluation pipelines, distributed training infrastructure, ablations, and analysis supporting the public release.",
+      "results": [
+        "19 domains and 148.37B tokens across the combined programme",
+        "English · CC BY-NC 4.0"
+      ],
+      "links": [
+        {
+          "label": "Dataset card",
+          "url": "https://huggingface.co/datasets/qvac/GenesisII"
+        },
+        {
+          "label": "Technical report",
+          "url": "https://huggingface.co/blog/qvac/genesis-ii"
+        },
+        {
+          "label": "Ablation collection",
+          "url": "https://huggingface.co/collections/qvac/genesis-ii"
+        }
+      ],
+      "stats": {
+        "downloads": 940,
+        "likes": 7,
+        "lastModified": "2025-12-17T09:18:42.000Z",
+        "license": "cc-by-nc-4.0",
+        "pipelineTask": null,
+        "languages": [
+          "en"
+        ],
+        "repositoryBytes": 3209413618707
+      }
+    },
+    {
+      "id": "fabric-adapters",
+      "repository": "qvac/fabric-llm-finetune",
+      "repositoryType": "model",
+      "category": "adapters",
+      "classification": "LoRA adapter collection",
+      "name": "QVAC Fabric LoRA Adapters",
+      "capability": "Reference adapters validating hardware-agnostic fine-tuning.",
+      "scale": "6.6M–15M trainable parameters",
+      "formats": "GGUF · LoRA",
+      "task": "Biomedical adaptation",
+      "size": "20.5–60.2 MB per adapter",
+      "description": "Qwen3 and Gemma 3 biomedical adapters trained through a workflow shared across desktop and mobile GPU backends.",
+      "contribution": "Original proof of concept, dataset curation, experimental design, Vulkan-versus-PyTorch validation, and benchmark review.",
+      "results": [
+        "Qwen3 0.6B, 1.7B, and 4B reference adapters",
+        "Gemma 3 1B and 4B reference adapters"
+      ],
+      "links": [
+        {
+          "label": "Adapter files",
+          "url": "https://huggingface.co/qvac/fabric-llm-finetune"
+        },
+        {
+          "label": "Technical report",
+          "url": "https://huggingface.co/blog/qvac/fabric-llm-finetune"
+        },
+        {
+          "label": "Runtime",
+          "url": "https://github.com/tetherto/qvac-fabric-llm.cpp"
+        }
+      ],
+      "stats": {
+        "downloads": 183,
+        "likes": 4,
+        "lastModified": "2026-04-16T12:35:41.000Z",
+        "license": "apache-2.0",
+        "pipelineTask": "text-generation",
+        "languages": [
+          "en"
+        ],
+        "repositoryBytes": 208740416
+      }
+    },
+    {
+      "id": "bitnet-adapters",
+      "repository": "qvac/fabric-llm-finetune-bitnet",
+      "repositoryType": "model",
+      "category": "adapters",
+      "classification": "Ternary weights and LoRA adapters",
+      "name": "BitNet b1.58 Edge Artifacts",
+      "capability": "Lossless ternary inference and mobile-GPU personalization.",
+      "scale": "1B reference model · 30 MB adapters",
+      "formats": "TQ1_0 · TQ2_0 · GGUF · LoRA",
+      "task": "Edge fine-tuning",
+      "size": "About 614 MiB for 1B TQ1_0",
+      "description": "Public BitNet weights and biomedical adapters used to demonstrate cross-platform fine-tuning and inference through Vulkan and Metal.",
+      "contribution": "Low-bit benchmarking, implementation review, quality evaluation, mobile and desktop testing, and research-paper development.",
+      "results": [
+        "Up to 13B parameters fine-tuned on iPhone 16",
+        "2.1–11.3× edge-GPU inference speedup over CPU in reported tests"
+      ],
+      "links": [
+        {
+          "label": "Artifact files",
+          "url": "https://huggingface.co/qvac/fabric-llm-finetune-bitnet"
+        },
+        {
+          "label": "Technical report",
+          "url": "https://huggingface.co/blog/qvac/fabric-llm-finetune-bitnet"
+        },
+        {
+          "label": "Runtime",
+          "url": "https://github.com/tetherto/qvac-fabric-llm.cpp"
+        }
+      ],
+      "stats": {
+        "downloads": 155,
+        "likes": 4,
+        "lastModified": "2026-03-17T19:54:12.000Z",
+        "license": "apache-2.0",
+        "pipelineTask": "text-generation",
+        "languages": [
+          "en"
+        ],
+        "repositoryBytes": 5128101216
+      }
+    }
+  ]
+}
