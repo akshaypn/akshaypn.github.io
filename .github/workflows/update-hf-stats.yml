@@ -1,0 +1,30 @@
+name: Update Hugging Face artifact stats
+
+on:
+  schedule:
+    - cron: '17 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Refresh public metadata
+        run: node scripts/update-hf-stats.mjs
+      - name: Commit changed snapshot
+        run: |
+          if git diff --quiet -- data/hf-artifacts.json; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/hf-artifacts.json
+          git commit -m "Refresh Hugging Face artifact stats"
+          git push

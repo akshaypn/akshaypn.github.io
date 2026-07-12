@@ -49,6 +49,7 @@
         <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
           <a href="#research">Research</a>
           <a href="#releases">Releases</a>
+          <a href="#artifacts">Models &amp; data</a>
           <a href="#experience">Experience</a>
           <a href="#talks">Talks</a>
           <a href="#contact">Contact</a>
@@ -152,6 +153,49 @@
             <p class="summary">Research into efficient ternary models that preserve useful dense-model behavior while enabling practical local deployment and personalization.</p>
             <p><strong>Current focus:</strong> conversion methods, training stability, distillation, runtime integration, and on-device evaluation.</p>
             <p class="quiet">Detailed benchmarks, recipes, and release artifacts will be published when the work is ready.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="artifacts" class="section artifact-section" aria-labelledby="artifacts-title">
+        <div class="shell section-head artifact-heading">
+          <div><p class="eyebrow">Models &amp; datasets</p><h2 id="artifacts-title">Research you can inspect and run.</h2></div>
+          <p>The reports above explain the work. These public repositories are the deliverables: models, datasets, research checkpoints, and adapters released as part of wider QVAC teams.</p>
+        </div>
+
+        <div class="shell lifecycle-block" aria-labelledby="lifecycle-title">
+          <p id="lifecycle-title" class="kicker">Across the complete model lifecycle</p>
+          <ol class="lifecycle-list">
+            <li>Data creation</li><li>Pretraining</li><li>Post-training</li><li>Quantization</li><li>Runtime integration</li><li>Mobile evaluation</li><li>Publication</li>
+          </ol>
+        </div>
+
+        <div class="shell artifact-controls" aria-label="Filter artifacts">
+          <button class="artifact-filter is-active" type="button" data-artifact-filter="models" aria-pressed="true">Models</button>
+          <button class="artifact-filter" type="button" data-artifact-filter="datasets" aria-pressed="false">Datasets</button>
+          <button class="artifact-filter" type="button" data-artifact-filter="adapters" aria-pressed="false">Adapters</button>
+        </div>
+
+        <p id="artifact-status" class="shell artifact-status" aria-live="polite">Loading the latest public snapshot…</p>
+        <div id="artifact-grid" class="shell artifact-grid" aria-busy="true"></div>
+        <noscript>
+          <p class="shell artifact-fallback">JavaScript is required for the filtered catalog. Browse the public artifacts directly on <a href="https://huggingface.co/qvac">QVAC’s Hugging Face profile</a>.</p>
+        </noscript>
+
+        <div class="shell research-context">
+          <div class="systems-strip">
+            <p class="kicker">Systems tested</p>
+            <ul><li>H100 clusters</li><li>AMD GPUs</li><li>Apple Silicon</li><li>Snapdragon &amp; Mali</li><li>iPhone-class devices</li><li>Vulkan &amp; Metal</li><li>CPU &amp; llama.cpp</li></ul>
+          </div>
+          <article class="method-card">
+            <p class="eyebrow">Research methodology</p>
+            <h3>Evaluation across models, runtimes, and devices.</h3>
+            <p>The work combines ablation design with materialized-versus-fake quantization checks, loss-curve equivalence, cross-runtime numerical validation, perplexity, benchmark retention, and phone-level throughput and memory testing.</p>
+          </article>
+          <article class="method-card method-card-dark">
+            <p class="eyebrow">Attribution</p>
+            <h3>Team releases, specific contributions.</h3>
+            <p>Each artifact identifies my role within the wider research and engineering effort. Repository ownership and blog authorship are never treated as evidence of sole model authorship.</p>
           </article>
         </div>
       </section>
