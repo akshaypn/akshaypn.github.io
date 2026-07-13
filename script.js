@@ -1,32 +1,98 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
+const header = document.querySelector('.site-header');
+
+function setMenu(open) {
+  if (!menuToggle || !nav) return;
+  menuToggle.setAttribute('aria-expanded', String(open));
+  nav.classList.toggle('is-open', open);
+  document.body.classList.toggle('nav-open', open);
+  const label = menuToggle.querySelector('.sr-only');
+  if (label) label.textContent = open ? 'Close navigation' : 'Open navigation';
+}
 
 if (menuToggle && nav) {
   menuToggle.addEventListener('click', () => {
     const open = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', String(!open));
-    nav.classList.toggle('is-open', !open);
+    setMenu(!open);
   });
 
   nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      menuToggle.setAttribute('aria-expanded', 'false');
-      nav.classList.remove('is-open');
-    });
+    link.addEventListener('click', () => setMenu(false));
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setMenu(false);
+  });
+
+  document.addEventListener('click', (event) => {
+    if (header && !header.contains(event.target)) setMenu(false);
   });
 }
+
+function updateHeader() {
+  if (header) header.classList.toggle('is-scrolled', window.scrollY > 24);
+}
+
+updateHeader();
+window.addEventListener('scroll', updateHeader, { passive: true });
+
+const navigationLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
+const navigationSections = navigationLinks
+  .map((link) => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean);
+
+if ('IntersectionObserver' in window) {
+  const navigationObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      navigationLinks.forEach((link) => {
+        const active = link.getAttribute('href') === `#${entry.target.id}`;
+        if (active) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+    });
+  }, { rootMargin: '-32% 0px -58% 0px' });
+  navigationSections.forEach((section) => navigationObserver.observe(section));
+}
+
+const revealObserver = 'IntersectionObserver' in window
+  ? new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 })
+  : null;
+
+function watchReveals(root = document) {
+  const elements = root.querySelectorAll('.focus-card, .release-card, .artifact-card, .method-card, .timeline article, .publication-list > *');
+  elements.forEach((element) => {
+    if (element.dataset.revealBound) return;
+    element.dataset.revealBound = 'true';
+    if (revealObserver) {
+      element.classList.add('reveal-ready');
+      revealObserver.observe(element);
+    }
+  });
+}
+
+watchReveals();
 
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
 const artifactGrid = document.getElementById('artifact-grid');
 const artifactStatus = document.getElementById('artifact-status');
+const artifactMore = document.getElementById('artifact-more');
 const artifactFilters = document.querySelectorAll('[data-artifact-filter]');
 let artifactSnapshot = null;
 let activeArtifactFilter = 'models';
+const expandedArtifactFilters = new Set();
 
 function compactNumber(value) {
-  if (!Number.isFinite(value)) return 'Not reported';
+  if (!Number.isFinite(value)) return 'Not listed';
   return new Intl.NumberFormat('en', {
     notation: value >= 1000 ? 'compact' : 'standard',
     maximumFractionDigits: 1
@@ -34,7 +100,7 @@ function compactNumber(value) {
 }
 
 function friendlyDate(value, includeYear = true) {
-  if (!value) return 'Not reported';
+  if (!value) return 'Not listed';
   return new Intl.DateTimeFormat('en', {
     day: 'numeric',
     month: 'short',
@@ -122,11 +188,22 @@ function buildArtifactCard(artifact) {
 function renderArtifacts() {
   if (!artifactGrid || !artifactSnapshot) return;
   const artifacts = artifactSnapshot.artifacts.filter((artifact) => artifact.category === activeArtifactFilter);
-  artifactGrid.replaceChildren(...artifacts.map(buildArtifactCard));
+  const expanded = expandedArtifactFilters.has(activeArtifactFilter);
+  const visibleArtifacts = expanded ? artifacts : artifacts.slice(0, 4);
+  artifactGrid.replaceChildren(...visibleArtifacts.map(buildArtifactCard));
   artifactGrid.setAttribute('aria-busy', 'false');
+  watchReveals(artifactGrid);
 
   const categoryName = activeArtifactFilter === 'models' ? 'models and checkpoints' : activeArtifactFilter;
-  artifactStatus.textContent = `${artifacts.length} ${categoryName} · Hugging Face snapshot ${friendlyDate(artifactSnapshot.updatedAt)} · downloads represent the last month, not unique users.`;
+  const countText = visibleArtifacts.length === artifacts.length ? `${artifacts.length}` : `Showing ${visibleArtifacts.length} of ${artifacts.length}`;
+  artifactStatus.textContent = `${countText} ${categoryName} · Hugging Face snapshot ${friendlyDate(artifactSnapshot.updatedAt)} · monthly downloads do not represent unique users.`;
+
+  if (artifactMore) {
+    const remaining = artifacts.length - 4;
+    artifactMore.hidden = artifacts.length <= 4;
+    artifactMore.setAttribute('aria-expanded', String(expanded));
+    artifactMore.textContent = expanded ? `Show fewer ${categoryName}` : `Show ${remaining} more ${categoryName}`;
+  }
 }
 
 artifactFilters.forEach((button) => {
@@ -141,6 +218,14 @@ artifactFilters.forEach((button) => {
   });
 });
 
+if (artifactMore) {
+  artifactMore.addEventListener('click', () => {
+    if (expandedArtifactFilters.has(activeArtifactFilter)) expandedArtifactFilters.delete(activeArtifactFilter);
+    else expandedArtifactFilters.add(activeArtifactFilter);
+    renderArtifacts();
+  });
+}
+
 if (artifactGrid && artifactStatus) {
   fetch('data/hf-artifacts.json')
     .then((response) => {
@@ -153,7 +238,7 @@ if (artifactGrid && artifactStatus) {
     })
     .catch(() => {
       artifactGrid.setAttribute('aria-busy', 'false');
-      artifactStatus.textContent = 'The artifact snapshot is temporarily unavailable.';
+      artifactStatus.textContent = 'Repository statistics are unavailable. Public repository links remain available.';
       const fallback = document.createElement('a');
       fallback.href = 'https://huggingface.co/qvac';
       fallback.target = '_blank';
