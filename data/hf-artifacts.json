@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T10:54:17.556Z",
+  "updatedAt": "2026-09-07T09:23:59.070Z",
   "source": "https://huggingface.co/qvac",
   "note": "Downloads are Hugging Face monthly-download snapshots, not unique users.",
   "artifacts": [
@@ -36,7 +36,7 @@
         }
       ],
       "stats": {
-        "downloads": 1036,
+        "downloads": 1108,
         "likes": 9,
         "lastModified": "2026-05-07T11:32:46.000Z",
         "license": "apache-2.0",
@@ -80,7 +80,7 @@
         }
       ],
       "stats": {
-        "downloads": 564,
+        "downloads": 707,
         "likes": 5,
         "lastModified": "2026-05-07T11:50:32.000Z",
         "license": "apache-2.0",
@@ -124,7 +124,7 @@
         }
       ],
       "stats": {
-        "downloads": 1807,
+        "downloads": 1041,
         "likes": 11,
         "lastModified": "2026-05-07T11:51:51.000Z",
         "license": "apache-2.0",
@@ -168,7 +168,7 @@
         }
       ],
       "stats": {
-        "downloads": 631,
+        "downloads": 720,
         "likes": 8,
         "lastModified": "2026-05-07T11:51:29.000Z",
         "license": "apache-2.0",
@@ -208,7 +208,7 @@
         }
       ],
       "stats": {
-        "downloads": 47,
+        "downloads": 60,
         "likes": 11,
         "lastModified": "2025-11-18T15:03:44.000Z",
         "license": "apache-2.0",
@@ -288,7 +288,7 @@
         }
       ],
       "stats": {
-        "downloads": 18,
+        "downloads": 19,
         "likes": 2,
         "lastModified": "2025-12-16T14:49:39.000Z",
         "license": "apache-2.0",
@@ -328,7 +328,7 @@
         }
       ],
       "stats": {
-        "downloads": 8,
+        "downloads": 5,
         "likes": 1,
         "lastModified": "2025-12-16T14:49:38.000Z",
         "license": "apache-2.0",
@@ -372,7 +372,7 @@
         }
       ],
       "stats": {
-        "downloads": 397,
+        "downloads": 367,
         "likes": 10,
         "lastModified": "2025-12-11T14:09:11.000Z",
         "license": "cc-by-nc-4.0",
@@ -416,7 +416,7 @@
         }
       ],
       "stats": {
-        "downloads": 7191,
+        "downloads": 4102,
         "likes": 8,
         "lastModified": "2025-12-17T09:18:42.000Z",
         "license": "cc-by-nc-4.0",
@@ -460,7 +460,7 @@
         }
       ],
       "stats": {
-        "downloads": 176,
+        "downloads": 169,
         "likes": 5,
         "lastModified": "2026-04-16T12:35:41.000Z",
         "license": "apache-2.0",
@@ -504,7 +504,7 @@
         }
       ],
       "stats": {
-        "downloads": 229,
+        "downloads": 196,
         "likes": 4,
         "lastModified": "2026-03-17T19:54:12.000Z",
         "license": "apache-2.0",
